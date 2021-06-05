@@ -56,9 +56,9 @@ public class HerniPlan {
                 return "Vypil jsi krabičák";
             }
         };
-        zachytnaStanice.add(new Franta("Franta, bezdomovec", 5, vajnos, vypitejVajnos, zachytnaStanice, mesto));
+        zachytnaStanice.add(new Franta("Franta - bezdomovec", 5, vajnos, vypitejVajnos, zachytnaStanice, mesto));
 
-        Enemy enemakTomas = new Enemy("Tomáš, bezdomovec", 15);
+        Enemy enemakTomas = new Enemy("Tomáš - bezdomovec", 15);
         enemakTomas.getInventory().addAll(List.of(vajnos, new MoneyContainer("Drobný", 9)));
         ulicka.add(enemakTomas);
 
@@ -69,7 +69,7 @@ public class HerniPlan {
                 zachytnaStanice,
                 uvnitrZachytneStanice)
         );
-        uvnitrZachytneStanice.add(new Vyberci("Výběrčí poplatků", 0));
+        uvnitrZachytneStanice.add(new Vyberci("Výběrčí poplatků", 1));
 
         Person prodavac = new ProdavacBenzinky("Prodavač", 25, obcanka);
         prodavac.getInventory().add(new MoneyContainer("Peníze z kasy", 500));
@@ -98,7 +98,7 @@ public class HerniPlan {
                 return "Co chceš?! S bezďákama se nebavim...";
             }
         };
-        politik.getInventory().add(new MoneyContainer("Peněženka", 2500));
+        politik.getInventory().add(new MoneyContainer("Peněženka", 2000));
         OU.add(politik);
     }
 

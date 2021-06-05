@@ -59,7 +59,7 @@ public class Franta extends Person implements Interactable {
      */
     @Override
     public String interact(MainCharacter interacter) {
-        Item vajnosToRemove = (this.vajnos == null ? this.vajnos2 : this.vajnos);
+        Item vajnosToRemove = (!interacter.getInventory().contains(this.vajnos) ? this.vajnos2 : this.vajnos);
         this.viable[2] = interacter.getInventory().contains(vajnosToRemove);
 
         if (!this.viable[2] && this.interactOption == 2) this.interactOption = 0;
@@ -87,7 +87,7 @@ public class Franta extends Person implements Interactable {
                     interacter.getInventory().add(
                             new TransformingItem("Prázdnej lahváč",
                                     new Weapon("Rozbitej lahváč (zbraň)",
-                                            20,
+                                            34,
                                             true
                                     ),
                                     interacter

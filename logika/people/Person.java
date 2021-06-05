@@ -17,7 +17,7 @@ public class Person implements IPerson {
     private boolean living;
 
     private final Weapon fists;
-    private Weapon equipedWeapon;
+    private Weapon equippedWeapon;
 
     /**
      * Konstruktor obecné postavy<br>
@@ -47,7 +47,7 @@ public class Person implements IPerson {
             }
         };
         this.fists = new Weapon("Fists", baseAttack, false);
-        this.equipedWeapon = fists;
+        this.equippedWeapon = fists;
         this.health = 100;
         this.living = true;
     }
@@ -72,7 +72,7 @@ public class Person implements IPerson {
 
     @Override
     public void callAfterAttack() {
-        if (this.equipedWeapon.isConsumable()) this.inventory.remove(this.equipedWeapon);
+        if (this.equippedWeapon.isConsumable()) this.inventory.remove(this.equippedWeapon);
         this.equipStrongestWeapon();
     }
 
@@ -87,7 +87,7 @@ public class Person implements IPerson {
                     && weapon.getDamage() > currentStrongest.getDamage())
                 currentStrongest = weapon;
         }
-        this.equipedWeapon = currentStrongest;
+        this.equippedWeapon = currentStrongest;
     }
 
     @Override
@@ -112,6 +112,6 @@ public class Person implements IPerson {
     @Override
     public int getAttack() {
         this.equipStrongestWeapon();
-        return this.equipedWeapon.getDamage();
+        return this.equippedWeapon.getDamage();
     }
 }

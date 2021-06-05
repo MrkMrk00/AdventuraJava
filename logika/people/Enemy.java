@@ -28,17 +28,16 @@ public class Enemy extends Person implements Attackable {
                 ? this.getHealth() / attacker.getAttack()
                 : this.getHealth() / attacker.getAttack() + 1);
 
-
         //Když vyhraje Enemy
         if (thisAttackIndex <= attackerAttackIndex) {
             attacker.changeHealth(-100);
-            this.changeHealth(-thisAttackIndex * attacker.getAttack());
+            this.changeHealth(-(thisAttackIndex * attacker.getAttack()));
             this.callAfterAttack();
             return this.getLosingText(this.getHealth());
         }
 
         //když vyhraje attacker
-        attacker.changeHealth(-attackerAttackIndex * this.getAttack());
+        attacker.changeHealth(-(attackerAttackIndex * this.getAttack()));
         this.changeHealth(-100);
         attacker.callAfterAttack();
         return this.getWinningText(attacker.getHealth());
