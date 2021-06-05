@@ -1,6 +1,7 @@
 package logika.people.storyCharacters;
 
 import logika.items.Food;
+import logika.items.Item;
 import logika.items.Weapon;
 import logika.people.Enemy;
 import logika.people.Interactable;
@@ -15,7 +16,7 @@ public class ProdavacObchod extends Enemy implements Interactable {
 
     private final double weaponCost;
 
-    public ProdavacObchod(String name, int baseAttack, Weapon availableForPurchase, double weaponCost) {
+    public ProdavacObchod(String name, int baseAttack, Item availableForPurchase, double weaponCost) {
         super(name, baseAttack);
         this.weaponCost = weaponCost;
         this.getInventory().add(availableForPurchase);
@@ -59,4 +60,5 @@ public class ProdavacObchod extends Enemy implements Interactable {
         this.interactOption = option;
         return this.interact(interacter);
     }
+
 }

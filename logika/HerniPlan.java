@@ -78,9 +78,10 @@ public class HerniPlan {
         Person prodavac2 = new ProdavacObchod(
                 "Prodavač",
                 25,
-                new Weapon("Kudla",
-                        60,
-                        false),
+                new TransformingItem("Zabalená kudla",
+                        new Weapon("Kudla",
+                            60,
+                            false)),
                 509.99);
 
         prodavac2.getInventory().addAll(List.of(
@@ -98,7 +99,7 @@ public class HerniPlan {
                 return "Co chceš?! S bezďákama se nebavim...";
             }
         };
-        politik.getInventory().add(new MoneyContainer("Peněženka", 2000));
+        politik.getInventory().add(new MoneyContainer("Peněženka", 1999));
         OU.add(politik);
     }
 

@@ -19,6 +19,6 @@ public interface Interactable {
      * @return String k vypsání do konzole
      */
     default String interact(MainCharacter interacter, int option) {
-        return this.interact(interacter);
+        return interact(interacter);
     }
 }
