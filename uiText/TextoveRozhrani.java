@@ -36,11 +36,19 @@ public class TextoveRozhrani {
         // základní cyklus programu - opakovaně se čtou příkazy a poté
         // se provádějí do konce hry.
 
-        while (!hra.konecHry()) {
-            String radek = prectiString();
-            System.out.println(hra.zpracujPrikaz(radek));
+        FileManipulator f = new FileManipulator();
+        while (!f.created) {
+            f.init();
         }
 
+        while (!hra.konecHry()) {
+            String radek = prectiString();
+            f.write("i: " + radek);
+            String output = hra.zpracujPrikaz(radek);
+            f.write("o: " + output);
+            System.out.println(output);
+        }
+        f.close();
         System.out.println(hra.vratEpilog());
     }
 
