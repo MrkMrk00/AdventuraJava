@@ -3,9 +3,11 @@ package uiText;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.FieldPosition;
 import java.util.Scanner;
 
+/**
+ * Třída obsahující logiku zaznamenávání uživ. vstupu a výstupu
+ */
 public class FileManipulator {
 
     private File file;
@@ -16,6 +18,9 @@ public class FileManipulator {
         this.created = false;
     }
 
+    /**
+     * Inicializuje path souboru a vytváří File a FileWriter
+     */
     public void init() {
         System.out.println("Zadejte path pro soubor, který bude zaznamenávat input a output:");
         try {
@@ -38,6 +43,10 @@ public class FileManipulator {
         }
     }
 
+    /**
+     * Metoda pro zápis do souboru
+     * @param toWrite String, který se propíše do souboru
+     */
     public void write(String toWrite) {
         try {
             this.fw.write(toWrite + System.lineSeparator());
@@ -46,6 +55,9 @@ public class FileManipulator {
         }
     }
 
+    /**
+     * Uzavření FileWriteru
+     */
     public void close() {
         try {
             this.fw.close();
