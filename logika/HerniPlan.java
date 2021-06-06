@@ -72,7 +72,7 @@ public class HerniPlan {
         uvnitrZachytneStanice.add(new Vyberci("Výběrčí poplatků", 1));
 
         Person prodavac = new ProdavacBenzinky("Prodavač", 25, obcanka);
-        prodavac.getInventory().add(new MoneyContainer("Peníze z kasy", 500));
+        prodavac.getInventory().add(new MoneyContainer("Peníze z kasy", 491));
         benzinka.add(prodavac);
 
         Person prodavac2 = new ProdavacObchod(
@@ -93,7 +93,7 @@ public class HerniPlan {
 
         most.add(new TransformingItem("Kus drátu", new Weapon("DIY Nunčaky",34, true)));
 
-        Person politik = new InteractableEnemy("Lokální politik", 5) {
+        Person politik = new InteractableEnemy("Lokální politik", 25) {
             @Override
             public String interact(MainCharacter interacter) {
                 return "Co chceš?! S bezďákama se nebavim...";

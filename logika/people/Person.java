@@ -16,8 +16,8 @@ public class Person implements IPerson {
     private final List<Item> inventory;
     private boolean living;
 
-    private final Weapon fists;
-    private Weapon equippedWeapon;
+    protected final Weapon fists;
+    protected Weapon equippedWeapon;
 
     /**
      * Konstruktor obecné postavy<br>
@@ -80,7 +80,7 @@ public class Person implements IPerson {
      * Metoda, která udělá ForEach nad inventářem a vybere z něj zbraň (instance Weapon) s nejvyšším útokem a vybaví jí (nastaví jí do proměnné this.equipedWeapon)<br>
      * Pokud není žádná zbraň v inventáři, nebo je útok nejsilnější zbraně nižší, než baseAttack zadaný při vytvoření instance ? extends Person, tak se vybaví this.fists s útokem baseAttack
      */
-    private void equipStrongestWeapon() {
+    protected void equipStrongestWeapon() {
         Weapon currentStrongest = this.fists;
         for (Item item : this.inventory) {
             if (item instanceof Weapon weapon

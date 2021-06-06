@@ -27,7 +27,7 @@ public class Vyberci extends Person implements Interactable {
         if (this.interactOption == 0) {
             if (enoughMoney) viable[0] = true;
             return "Dobrý den, vy tu jste asi kvůli zaplacení poplatku za přespání, že?"
-                    + (enoughMoney ? "1 - Ano, tady máte peníze, pane!" : "");
+                    + (enoughMoney ? System.lineSeparator() + "1 - Ano, tady máte peníze, pane!" : "");
         }
 
 

@@ -61,4 +61,9 @@ public class ProdavacObchod extends Enemy implements Interactable {
         return this.interact(interacter);
     }
 
+    //je potřeba, aby měl prodavač v inventáři kudlu, ale neměl 60 attack :D
+    @Override
+    protected void equipStrongestWeapon() {
+        this.equippedWeapon = this.fists;
+    }
 }
