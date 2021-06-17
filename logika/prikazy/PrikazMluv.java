@@ -41,11 +41,12 @@ public class PrikazMluv extends Prikaz {
 
         if (params.size() == 2 && collected.get(0) instanceof Interactable i) {
             String optionRaw = params.get(1);
-            int option = -1;
+            int option;
 
             try {
                 option = Integer.parseInt(optionRaw.strip());
-                if (option < 0) throw new NumberFormatException();
+                var up = new NumberFormatException();
+                if (option < 0) throw up;
             }
             catch (NumberFormatException e) {
                 return "Nepodařilo se přečíst volbu v konverzaci";
